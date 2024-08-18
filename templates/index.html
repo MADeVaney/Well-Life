@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Annual Physicals with Dr. Harding</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>Dr. Harding is Available on:</h1>
+            <p><button id="current">Show Current Month</button>
+            <button id="next">Show Next Month</button></p>
+            <table id="Current">
+                {% for date in current_month %}
+                    <tr><td style="font-size: 2.5vh; height: 4vh">{{date}}</td></tr>
+                {% endfor %}
+            </table>
+            <table id="Next">
+                {% for date in next_month %}
+                    <tr><td style="font-size: 2.5vh; height: 4vh">{{date}}</td></tr>
+                {% endfor %}
+            </table>
+        </center>
+        <script type="text/javascript">
+            document.getElementById("Current").style.display = "none";
+
+            document.getElementById("current").onclick = function() {
+                document.getElementById("Current").style.display = "Block";
+                document.getElementById("Next").style.display = "none";
+            }
+    
+            document.getElementById("next").onclick = function() {
+                document.getElementById("Current").style.display = "none";
+                document.getElementById("Next").style.display = "Block";
+            }
+        </script>
+    </body>
+
+</html>
